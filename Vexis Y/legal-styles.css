@@ -1,0 +1,66 @@
+.legal-page-container {
+    width: 100%;
+    max-width: 800px; /* Optimal width for readability */
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid hsl(var(--border));
+    padding-bottom: 1.5rem;
+}
+
+.legal-header .headline {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.legal-header .subtitle {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+}
+
+/* ====== ARTICLE CONTENT ====== */
+.legal-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.legal-content p {
+    line-height: 1.75;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1rem;
+}
+
+.legal-content ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+    line-height: 1.75;
+    color: hsl(var(--muted-foreground));
+}
+
+.legal-content a {
+    color: hsl(var(--accent));
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.legal-content a:hover {
+    text-decoration: underline;
+}
+
+/* ====== RESPONSIVE STYLES ====== */
+@media (min-width: 640px) {
+    .legal-header .headline {
+        font-size: 3rem;
+    }
+}
