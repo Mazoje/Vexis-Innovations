@@ -1,0 +1,217 @@
+/* ====== GOOGLE FONTS & BASE STYLES ====== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap');
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+}
+
+.dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --muted-foreground: 215 20.2% 65.1%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+/* ====== ABOUT HEADER ====== */
+.about-header {
+    padding-top: 4rem; /* py-16 */
+    padding-bottom: 4rem;
+}
+.about-header .tagline {
+    font-weight: 600; /* font-semibold */
+    color: hsl(var(--accent-foreground)); /* text-accent */
+}
+.about-header .headline {
+    margin-top: 0.5rem; /* mt-2 */
+    font-size: 2.25rem; /* text-4xl */
+    letter-spacing: -0.025em; /* tracking-tight */
+    font-weight: 800; /* font-extrabold */
+}
+.about-header .subtitle {
+    margin-top: 1.5rem; /* mt-6 */
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem; /* text-lg */
+    color: hsl(var(--muted-foreground));
+}
+
+/* ====== BANNER IMAGE ====== */
+.banner-image {
+    position: relative;
+    height: 16rem; /* h-64 */
+    background-image: url('https://npr.brightspotcdn.com/02/f0/5f2873fe49e488df5ab85aac8351/robotics-team-close.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ====== MISSION & STORY SECTION ====== */
+.mission-story-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.mission-story-grid {
+    display: grid;
+    gap: 3rem; /* gap-12 */
+    align-items: center;
+}
+.mission-story-grid .headline {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700;
+}
+.mission-story-text {
+    margin-top: 1rem; /* mt-4 */
+    color: hsl(var(--muted-foreground));
+}
+
+/* ====== TEAM SECTION ====== */
+.team-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #f3f4f6;
+}
+.dark .team-section {
+    background-color: #374151; /* dark:bg-gray-800 */
+}
+.team-section .headline {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+.team-section .subtitle {
+    margin-top: 1rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    color: hsl(var(--muted-foreground));
+}
+
+.team-grid {
+    margin-top: 3rem; /* mt-12 */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem; /* gap-8 */
+}
+
+.team-card {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.team-card-inner {
+    max-width: 16rem; /* max-w-xs */
+}
+
+.team-member-name {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.team-member-role {
+    color: hsl(var(--accent-foreground));
+}
+
+/* AVATAR STYLES (from <Avatar> component) */
+.avatar {
+    position: relative;
+    display: flex;
+    height: 6rem; /* h-24 */
+    width: 6rem;  /* w-24 */
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 9999px; /* rounded-full */
+    margin-left: auto;
+    margin-right: auto;
+}
+.avatar-image {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.avatar-fallback {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    font-weight: 600;
+    /* In a real app, this would be hidden if the image loads.
+       For static HTML, you can remove it or keep it as a placeholder. */
+    display: none;
+}
+
+
+/* ====== RESPONSIVE STYLES ====== */
+@media (min-width: 640px) { /* sm: */
+    .about-header .headline {
+        font-size: 3rem; /* sm:text-5xl */
+    }
+    .banner-image {
+        height: 20rem; /* sm:h-80 */
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* This rule centers the last item if it's on a new row by itself */
+    .team-card:last-child:nth-child(odd) {
+        grid-column: span 2 / span 2;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) { /* md: */
+    .container {
+        padding-left: 1.5rem; /* md:px-6 */
+        padding-right: 1.5rem;
+    }
+    .mission-story-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) { /* lg: */
+    .banner-image {
+        height: 24rem; /* lg:h-96 */
+    }
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* On a 3-column grid, the last item no longer needs to be centered */
+    .team-card:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+}
